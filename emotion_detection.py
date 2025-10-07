@@ -8,8 +8,7 @@ def emotion_detector(text_to_analyze):
     response = requests.post(url, json=input_json, headers=headers)
 
     if response.status_code == 200:
-        formatted_response = json.loads(response.text)
-        print(formatted_response)
+        return response.text
 
     if response.status_code == 500:
-        print("error")
+        print("server error")
