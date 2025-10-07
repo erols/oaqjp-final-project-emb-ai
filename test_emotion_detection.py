@@ -1,8 +1,15 @@
-from EmotionDetection.emotion_detection import emotion_detector
+''' Test Cases for the Emotion Detection app
+'''
+
 import unittest
+from EmotionDetection.emotion_detection import emotion_detector
 
 class TestEmotionDetector(unittest.TestCase):
+    ''' Set up the test fixture
+    '''
     def test_emotion_detector(self):
+        ''' The test cases for Emotion Detection
+        '''
         result1 = emotion_detector("I am glad this happened")
         self.assertEqual(result1['dominant_emotion'], 'joy')
         result2 = emotion_detector("I am really mad about this")
