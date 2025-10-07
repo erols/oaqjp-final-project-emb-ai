@@ -6,7 +6,7 @@ app = Flask("Emotion Detector")
 @app.route("/emotionDetector")
 def emo_detector():
     text_to_analyze = request.args.get('textToAnalyze')
-    emotions = emotion_detector(textToAnalyze)
+    emotions = emotion_detector(text_to_analyze)
     anger = emotions['anger']
     disgust = emotions['disgust']
     fear = emotions['fear']
@@ -19,7 +19,7 @@ def emo_detector():
         'fear': {fear}, \
         'joy': {joy} and \
         'sadness: {sadness}. \
-        The dominant emotion is {dominant}."
+        The dominant emotion is <b>{dominant}</b>."
 
 @app.route("/")
 def render_index_page():
